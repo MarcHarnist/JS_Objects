@@ -72,9 +72,9 @@ Sport.prototype.afficher2 = function(avecDetail)
         }
     }
 }
-var tennis = new SportDeCompetition("Tennis", "Sport de raquette", "Regionale");
-console.log("tennis.afficher");
-tennis.afficher2();
+// var tennis = new SportDeCompetition("Tennis", "Sport de raquette", "Regionale");
+// console.log("tennis.afficher");
+// tennis.afficher2();
 
 /** A closure is the combination of a function and the lexical environment within which that function was declared.
  *
@@ -89,11 +89,20 @@ var librairieClosure = (function () {
             case 'memory' :
                 return function(data) //Return a function !
                 {
-
+                    console.log("Enregistrer rest %i", data)
                 }
                 break;
             case 'localStorage' :
-
+                return function(data) //Return a function !
+                {
+                    console.log("Enregistrer localStorage %i", data)
+                }
+                break;
+                case 'rest' :
+                return function(data) //Return a function !
+                {
+                    console.log("Enregistrer localStorage %i", data)
+                }
                 break;
 
         }
@@ -102,7 +111,8 @@ var librairieClosure = (function () {
 
     return librairie;
 });
-
+librairieClosure.enregistrerData = librairieClosure.enregistrer("rest");
+librairieClosure.enregistrerData = librairieClosure.enregistrer("localStorage");
 
 
 

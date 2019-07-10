@@ -1,4 +1,3 @@
-
 var Vehicule = function(param1, param2){
 
     //Attributs
